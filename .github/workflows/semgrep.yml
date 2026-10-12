@@ -23,11 +23,11 @@ jobs:
       # Hint: Using Semgrep's official container ensures all dependencies are ready
     # Step 4: Define the steps of our job
     steps:
-      - name: semgrep-check        # Options: choose any name you want. This step checks out our code.
+      - name: checkout        # Options: choose any name you want. This step checks out our code.
         uses: actions/checkout@v6        # Options: actions/checkout@v6 | actions/setup-node@v3 | docker/setup-buildx-action@v2
         # Hint: Checkout is needed so that semgrep can access your repo code
 
-      - name: semgrep-scan        # Options: choose any name you want. This step scans our code. 
+      - name: scan        # Options: choose any name you want. This step scans our code. 
         run: semgrep scan --sarif --sarif-output=semgrep.sarif --error         # Options: 
                                      # semgrep scan --sarif --sarif-output=semgrep.sarif --error
                                      # semgrep scan --sarif --sarif-output=semgrep.sarif || true 
